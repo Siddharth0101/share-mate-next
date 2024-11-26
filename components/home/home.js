@@ -10,8 +10,8 @@ export default function HomePage() {
                     src="/forgot.png" 
                     alt="home" 
                     className="w-full h-full object-cover" 
-                    height={200}
-                    width={500}
+                    height={5000}
+                    width={10000}
                     priority
                 />
             </div>

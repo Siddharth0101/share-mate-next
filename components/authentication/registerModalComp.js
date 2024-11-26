@@ -19,7 +19,7 @@ export default function RegisterModalComp({setToast,setMessage,isUserName ,setIs
         let value=e.target.value
         setIsConfirmPassword(value)
     }
-    const registerHandler=(e)=>{
+    const registerHandler= async (e)=>{
         e.preventDefault()
         if(isPassword!=isConfirmPassword) {
             setToast(true)
@@ -34,8 +34,22 @@ export default function RegisterModalComp({setToast,setMessage,isUserName ,setIs
         const data={
             userName:isUserName,
             email:isEmail,
-            password:isPassword,
-            confirmPassword:isConfirmPassword
+            password:isConfirmPassword,
+            returnSecureToken:true
+        }
+        try {
+            const response=await fetch("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=98206EE1-C8F6-4452-ABC9-FB0CF8ECABB9",{
+                method:"POST",
+                headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body:JSON.stringify(data)
+            })
+            const resData=await response.json()
+            console.log(resData)
+        } catch (error) {
+    //         const responseData = await response.json(); 
+    // console.log(responseData);
         }
         console.log(data)
         setToast(true);
