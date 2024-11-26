@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 export default function HomePage() {
     return (
         <div className="relative h-screen">
@@ -10,9 +9,10 @@ export default function HomePage() {
                 <Image 
                     src="/forgot.png" 
                     alt="home" 
-                    layout="fill" 
-                    objectFit="cover" 
-                    className="w-full h-full" 
+                    className="w-full h-full object-cover" 
+                    height={200}
+                    width={500}
+                    priority
                 />
             </div>
         </div>
