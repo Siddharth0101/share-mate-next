@@ -1,6 +1,5 @@
 "use client"
 import RegisterModal from "@/components/authentication/registerModal";
-import RegisterModalComp from "@/components/authentication/registerModalComp";
 import Toast from "@/components/authentication/toast";
 import { useState } from "react";
 export default function Register() {

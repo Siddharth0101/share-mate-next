@@ -1,3 +1,4 @@
+"use client"
 export default function RegisterModalComp({setToast,setMessage,isUserName ,setIsUserName, isEmail, setIsEmail ,isPassword ,setIsPassword ,isConfirmPassword ,setIsConfirmPassword}) {
     const userNameHandler=(e)=>{
         let value=e.target.value
@@ -30,11 +31,18 @@ export default function RegisterModalComp({setToast,setMessage,isUserName ,setIs
             setMessage("Password must be longer than 6 characters")
             return 
         }
+        const data={
+            userName:isUserName,
+            email:isEmail,
+            password:isPassword,
+            confirmPassword:isConfirmPassword
+        }
+        console.log(data)
         setToast(true);
         setMessage("Registration successful!");
     }
     return <div className="flex justify-center">
-        <div className="lg:max-w-xl h-auto md:max-w-md  p-5 m-5  bg-white rounded-2xl  shadow-2xl ">
+        <div className="lg:max-w-xl h-auto md:max-w-md  p-5 m-5  bg-gray-300  rounded-2xl  shadow-2xl ">
             <form onSubmit={registerHandler}>
                 <div className="flex justify-center text-2xl text-black font-bold ">
                     Register
@@ -44,7 +52,7 @@ export default function RegisterModalComp({setToast,setMessage,isUserName ,setIs
                         User Name
                     </div>
                     <div className="m-2">
-                        <input type="text" className="bg-slate-400 rounded-md w-full text-xl" onChange={userNameHandler} value={isUserName} required/>
+                        <input type="text" className="bg-slate-900 rounded-md w-full text-xl p-1" onChange={userNameHandler} value={isUserName} required/>
                     </div>
                 </div>
                 <div>
@@ -52,7 +60,7 @@ export default function RegisterModalComp({setToast,setMessage,isUserName ,setIs
                         Email
                     </div>
                     <div className="m-2">
-                        <input type="email" className="bg-slate-400 rounded-md w-full text-xl" onChange={emailHandler} value={isEmail} required/>
+                        <input type="email" className="bg-slate-900 rounded-md w-full text-xl p-1" onChange={emailHandler} value={isEmail} required/>
                     </div>
                 </div>
                 <div>
@@ -60,7 +68,7 @@ export default function RegisterModalComp({setToast,setMessage,isUserName ,setIs
                         Password
                     </div>
                     <div className="m-2">
-                        <input type="password" className="bg-slate-400 rounded-md w-full text-xl" onChange={passwordHandler} value={isPassword} required/>
+                        <input type="password" className="bg-slate-900 rounded-md w-full text-xl p-1" onChange={passwordHandler} value={isPassword} required/>
                     </div>
                 </div>
                 <div>
@@ -68,7 +76,7 @@ export default function RegisterModalComp({setToast,setMessage,isUserName ,setIs
                         Confirm Password
                     </div>
                     <div className="m-2">
-                        <input type="text" className="bg-slate-400 rounded-md w-full text-xl" onChange={confirmPasswordHandler} value={isConfirmPassword} required/>
+                        <input type="text" className="bg-slate-900 rounded-md w-full text-xl p-1" onChange={confirmPasswordHandler} value={isConfirmPassword} required/>
                     </div>
                 </div>
                 <div className="flex justify-center">
