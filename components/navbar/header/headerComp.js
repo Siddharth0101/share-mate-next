@@ -28,11 +28,11 @@ export default function HeaderComp({isMenuOpen,setIsMenuOpen,isProfileOpen,setIs
                         <div className="hover:underline-offset-8 hover:underline hover:text-gray-300 transition duration-300 ease-in-out">
                             <Link href="/">Home</Link>
                         </div>
-                        <div className="hover:underline-offset-8 hover:underline hover:text-gray-300 transition duration-300 ease-in-out">
+                        <div className="hover:underline-offset-8 hover:underline hover:text-gray-300 transition duration-300 ease-in-out">  
                             <Link href="/track">Track</Link>
                         </div>
                         <div className="hover:underline-offset-8 hover:underline hover:text-gray-300 transition duration-300 ease-in-out">
-                            <Link href="/suggest">Suggest</Link>
+                            <Link href="/suggest">Data</Link>
                         </div>
                         <div className="hover:underline-offset-8 hover:underline hover:text-gray-300 transition duration-300 ease-in-out">
                             <Link href="/support">Support</Link>
